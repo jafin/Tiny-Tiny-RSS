@@ -15,6 +15,10 @@
 	require_once "db.php";
 	require_once "db-prefs.php";
 
+	if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
+		define('PHP_EXECUTABLE', PHP_BINDIR . '\php');
+	}
+	
 	if (!defined('PHP_EXECUTABLE'))
 		define('PHP_EXECUTABLE', '/usr/bin/php');
 
